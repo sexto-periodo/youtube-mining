@@ -1,0 +1,16 @@
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/utils/JsonUtil.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/utils/ValidationUtil.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/entity/BaseEntity.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/exceptions/HttpException.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/config/AppConfig.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/repo/Repository.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/exceptions/EntityNotFoundException.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/github/GitHubService.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/exceptions/UnauthorizedException.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/exceptions/ForbbidenException.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/exceptions/ApiException.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/exceptions/InvalidTokenException.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/Lab02Application.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/exceptions/BadRequestException.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/utils/HashUtils.java
+/home/gabriel/Codes/Curso/lab-experimentacao/LAB02/lab02-java-poc/src/main/java/com/ti/lab02/global/domain/exceptions/EntityNullException.java
