@@ -70,6 +70,7 @@ public class VideoMiner {
         YouTube.Search.List request = youtubeService.search()
                 .list("snippet");
         SearchListResponse response = request.setKey(DEVELOPER_KEY)
+                .setMaxResults(100L)
                 .setQ("Python for beginners")
                 .execute();
 
