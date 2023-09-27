@@ -1,4 +1,13 @@
-# [Nome do projeto]
+# YouTube-Miner
+# Controle de Tarefas:
+- [ ✅ ] Criação da aplicação
+- [ ✅ ] Modelagem básica para para o Dominio de Videos
+- [ ✅ ] Modelagem do dominio de comentários
+- [ ✅ ] Enums para controle de pesquisas (Python, Java etc...)
+- [ 🔃 ] Script: continuar mineração de vídeos de onde parou
+- [ 🔃 ] Script: continuar mineração de Comentários de onde parou
+- [ 🔃 ] Script: incrementar a quantidade de vídeos
+- [ 🔃 ] Script: Incrementar a quantidade de comentários
 
 [Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.]
 
