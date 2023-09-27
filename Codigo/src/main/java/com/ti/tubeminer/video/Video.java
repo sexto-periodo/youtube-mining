@@ -1,8 +1,11 @@
 package com.ti.tubeminer.video;
 
 import com.ti.tubeminer.global.domain.entity.BaseEntity;
+import com.ti.tubeminer.snippet.Snippet;
+import com.ti.tubeminer.youtubeid.YouTubeId;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -10,7 +13,7 @@ import static com.ti.tubeminer.utils.HashUtils.generateHash;
 
 
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -28,13 +31,20 @@ public class Video extends BaseEntity {
     @Column
     private long id;
 
-    @Builder.Default
-    @Column(name = "hash_id")
-    private String hashId = generateHash();
-
-    @Column(name = "name")
-    private String name;
-
     @Column(name = "url")
     private String url;
+
+    @Column(name = "etag")
+    private String etag;
+
+    @Column(name = "kind")
+    private String kind;
+
+    @OneToOne(cascade = CascadeType.MERGE, orphanRemoval = true)
+    @JoinColumn(name = "fk_youtube_id_id")
+    private YouTubeId youTubeId;
+
+    @OneToOne(cascade = CascadeType.MERGE, orphanRemoval = true)
+    @JoinColumn(name = "fk_snippet_id")
+    private Snippet snippet;
 }

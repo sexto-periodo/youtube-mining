@@ -20,6 +20,5 @@ public class Start {
 
         videoMiner.request();
 
-
     }
 }

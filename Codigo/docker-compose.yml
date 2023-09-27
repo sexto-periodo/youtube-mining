@@ -20,7 +20,7 @@ services:
 
 
 networks:
-  tube-miner_net:
+  tube_miner_net:
 
 volumes:
   database_tube_miner:

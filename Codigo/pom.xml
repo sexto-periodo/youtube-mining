@@ -18,14 +18,7 @@
     </properties>
     <dependencies>
 
-        <!--▌║█║▌│║▌│║▌║▌█║GraphQl Dependencies ▌│║▌║▌│║║▌█║▌║█-->
 
-        <!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-spring-boot-starter -->
-        <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-spring-boot-starter</artifactId>
-            <version>5.0.2</version>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
         <dependency>
@@ -33,6 +26,24 @@
             <artifactId>okhttp</artifactId>
             <version>4.11.0</version>
         </dependency>
+
+        <!-- Youtube -->
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.31.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-youtube -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-youtube</artifactId>
+            <version>v3-rev222-1.25.0</version>
+        </dependency>
+
+
+
+
 
 
 
