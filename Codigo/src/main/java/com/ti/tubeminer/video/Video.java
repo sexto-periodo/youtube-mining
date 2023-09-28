@@ -31,7 +31,7 @@ import java.util.List;
 @EqualsAndHashCode(of = "id", callSuper = false)
 public class Video extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private long id;
 

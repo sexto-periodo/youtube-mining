@@ -29,7 +29,7 @@ import java.util.Date;
 @EqualsAndHashCode(of = "id", callSuper = false)
 public class Comment extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private long id;
 

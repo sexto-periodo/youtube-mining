@@ -66,7 +66,7 @@ public class CommentMiner {
                 .execute();
         comentDataProcessor.proccessResponse(firstResponse, video.getVideoId());
 
-        for (int  i = 0 ; i < 3 ; i++){
+        for (int  i = 0 ; i < 1 ; i++){
             YouTubeListResponse lastResponse = youTubeListResponseService.findLatestByContentType(ContentTypeEnum.COMMENT);
             CommentThreadListResponse response = request.setKey(DEVELOPER_KEY)
                     .setPageToken(lastResponse.getNextPageToken())
@@ -79,7 +79,7 @@ public class CommentMiner {
 
     public void mineComments() {
         List<Video> videos = videoService.findLatestVideosWithUnminedComments();
-        videos.stream().forEach(video -> {
+        videos.parallelStream().forEach(video -> {
             try {
                 mineCommentsFromVideo(video);
             } catch (GeneralSecurityException e) {
