@@ -1,10 +1,11 @@
-package com.ti.tubeminer.video;
+package com.ti.tubeminer.comment;
 
-import com.ti.tubeminer.comment.Comment;
+
 import com.ti.tubeminer.enums.ContentTypeEnum;
 import com.ti.tubeminer.enums.KindEnum;
 import com.ti.tubeminer.enums.ProgrammingLanguageEnum;
 import com.ti.tubeminer.global.domain.entity.BaseEntity;
+import com.ti.tubeminer.video.Video;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -12,31 +13,25 @@ import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 import java.util.Date;
-import java.util.List;
-
 
 @Data
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "t_video", uniqueConstraints = {
-        @UniqueConstraint(name = "uk_video_hash_id", columnNames = {"hash_id"}),
-        @UniqueConstraint(name = "uk_video", columnNames = {"id"}),
-        @UniqueConstraint(name = "uk_video_youtube_id", columnNames = {"video_id"})
+@Table(name = "t_comment", uniqueConstraints = {
+        @UniqueConstraint(name = "uk_comment_hash_id", columnNames = {"hash_id"}),
+        @UniqueConstraint(name = "uk_comment", columnNames = {"id"})
 })
 @SQLDelete(sql = "UPDATE t_video SET deleted = true WHERE id = ?")
 @Where(clause = "deleted = false")
 @ToString(of = {"id", "hashId"})
 @EqualsAndHashCode(of = "id", callSuper = false)
-public class Video extends BaseEntity {
+public class Comment extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column
     private long id;
-
-    @Column(name = "url")
-    private String url;
 
     @Column(name = "etag")
     private String etag;
@@ -45,25 +40,31 @@ public class Video extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private KindEnum kind;
 
-    @Column(name = "video_id", nullable = false)
+    @Column(name = "video_id")
     private String videoId;
-
-    @Column(name = "published_at")
-    private Date publishedAt;
 
     @Column(name = "channel_id")
     private String channelId;
 
-    @Column(name = "channel_title")
-    private String channelTitle;
+    @Column(name = "text_display", columnDefinition = "TEXT")
+    private String textDisplay;
 
-    @Column(name = "title", columnDefinition = "VARCHAR(512)")
-    private String title;
+    @Column(name = "text_original", columnDefinition = "TEXT")
+    private String textOriginal;
 
-    @Column(name = "description", columnDefinition = "TEXT")
-    private String description;
+    @Column(name = "author_display_name", columnDefinition = "TEXT")
+    private String authorDisplayName;
 
-    @Column(name = "response_content_type")
+    @Column(name = "published_at", nullable = false, updatable = false)
+    private Date publisheAt;
+
+    @Column(name = "updated_at")
+    private Date updatedAt;
+
+    @Column(name = "total_reply_count")
+    private int totalReplyCount;
+
+    @Column(name = "content_type")
     @Enumerated(EnumType.STRING)
     private ContentTypeEnum contentType;
 
@@ -71,10 +72,9 @@ public class Video extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private ProgrammingLanguageEnum programmingLanguage;
 
-    @Builder.Default
-    @Column(name = "mined_comments")
-    private boolean minedComments = Boolean.FALSE;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_video")
+    private Video video;
 
-    @OneToMany(mappedBy = "video", cascade = CascadeType.ALL)
-    private List<Comment> comments;
+
 }
