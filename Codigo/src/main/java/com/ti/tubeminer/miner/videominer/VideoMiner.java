@@ -26,6 +26,9 @@ public class VideoMiner {
 
     @Value("${application.mining.programming_language}")
     private ProgrammingLanguageEnum PROGRAMMING_LANGUAGE;
+
+    @Value("${application.mining.search_terms}")
+    private String SEARCH_TERMS;
     
     @Autowired
     private VideoDataProcessor videoDataProcessor;

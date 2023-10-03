@@ -66,7 +66,7 @@ public class CommentMiner {
                 .execute();
         comentDataProcessor.proccessResponse(firstResponse, video.getVideoId());
 
-        for (int  i = 0 ; i < 1 ; i++){
+        for (int  i = 0 ; i < 2 ; i++){
             YouTubeListResponse lastResponse = youTubeListResponseService.findLatestByContentType(ContentTypeEnum.COMMENT);
             CommentThreadListResponse response = request.setKey(DEVELOPER_KEY)
                     .setPageToken(lastResponse.getNextPageToken())
