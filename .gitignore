@@ -1,2 +1,6 @@
 # Ignorar arquivos .env
 *.env
+*.idea
+/.idea
+**/.idea/
+/.idea/**
